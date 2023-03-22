@@ -1,0 +1,35 @@
+{
+  "app": "PX to REM Converter",
+  "logo": "Logo",
+  "home": "Home",
+  "about": {
+    "aboutTitle": "About",
+    "header": "Convert pixels to REM",
+    "details": "This calculator converts pixels to the CSS unit REM. The conversion is based on the default",
+    "fontSize": "font-size",
+    "pixel": "pixel",
+    "oneRem": "1rem",
+    "pixelCount": "16px",
+    "direction": "The conversion works of course in both directions, just change the opposite input field.",
+    "example": "An example",
+    "exampleDetails": "So if we take the default size as an example, then",
+    "onePx": "1px",
+    "represents": "represents",
+    "remCount": "0.0625rem",
+    "exampleDetailsSecond": "and, in the other direction,",
+    "emRemDiff": "EM vs. REM: The differences",
+    "difference": "Inside a sinlge document, the length of a REM unit is everywhere the same, it can just differ between documents. EM on the other side can differ between every element, because it is relative to the elements own",
+    "exception": "(excpetion is the",
+    "differenceSecond": "itself, in it EM is relative to the parent).",
+    "remDetails": "REM is the newer unit, older browsers don't support it."
+  },
+  "contact": {
+    "contactTitle": "Contact",
+    "content": "Get in touch",
+    "message": "My inbox is always open, Whether you have any suggestions or just want to say hi, I'll try my best to get back to you!"
+  },
+  "notFound": {
+    "nfCode": "404",
+    "nfMessage": "This page could not be found."
+  }
+}
