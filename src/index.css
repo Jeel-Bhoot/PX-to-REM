@@ -11,29 +11,15 @@ body {
 }
 
 code {
-  color: rgb(56 189 248/1);
+  font-family: SF Mono;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: rgb(0, 122, 255);
 }
 
-button {
-  padding: 0.313rem 1.125rem;
-  color: white;
-}
-
-input {
-  display: block;
-  width: 100%;
-  margin-top: 4px;
-  transition: all 150ms ease-in-out;
-  box-sizing: border-box;
-  padding: 0.25rem 1.25rem;
-  font-size: 2.4rem;
-  text-align: center;
-  background-color: #233554;
-  border-radius: 0.5rem;
-  box-shadow: 0 20px 30px -15px #0a192f;
-  color: #8892b0;
-}
-
-input:focus {
-  outline: 0;
+abbr::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
 }

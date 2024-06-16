@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
-import NotFound from "./components/NotFound/NotFound";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import NotFound from "./components/NotFound";
 import { Helmet } from "react-helmet";
 import data from "./Data/Data.json";
 
-function App() {
+export default function App() {
   return (
-    <div className="App flex flex-col font-sans bg-slate-900 gap-5">
+    <div className="App flex flex-col bg-light-white dark:bg-default font-sans tracking-tight gap-5">
       <BrowserRouter>
         <Header />
         <Helmet>
@@ -31,5 +31,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

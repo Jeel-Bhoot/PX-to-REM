@@ -18,7 +18,7 @@
     "remCount": "0.0625rem",
     "exampleDetailsSecond": "and, in the other direction,",
     "emRemDiff": "EM vs. REM: The differences",
-    "difference": "Inside a sinlge document, the length of a REM unit is everywhere the same, it can just differ between documents. EM on the other side can differ between every element, because it is relative to the elements own",
+    "difference": "Inside a single document, the length of a REM unit is everywhere the same, it can just differ between documents. EM on the other side can differ between every element, because it is relative to the elements own",
     "exception": "(excpetion is the",
     "differenceSecond": "itself, in it EM is relative to the parent).",
     "remDetails": "REM is the newer unit, older browsers don't support it."
@@ -26,10 +26,10 @@
   "contact": {
     "contactTitle": "Contact",
     "content": "Get in touch",
-    "message": "My inbox is always open, Whether you have any suggestions or just want to say hi, I'll try my best to get back to you!"
+    "message": "My inbox is always open, Whether you have any suggestions or just want to say hi, I'll try my best to get back to you!",
+    "hello": "Say Hello"
   },
   "notFound": {
-    "nfCode": "404",
-    "nfMessage": "This page could not be found."
+    "nfMessage": "The page you're looking for can't be found."
   }
 }

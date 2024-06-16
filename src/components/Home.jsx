@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ToggleSwap from "../../Assets/icons/ToggleSwap";
-import "./style.css";
+import ToggleSwap from "../Assets/icons/ToggleSwap";
 
 export default function Home() {
   const [px, setPX] = useState("");
@@ -34,18 +33,24 @@ export default function Home() {
     const {
       target: { value },
     } = e;
-    const pxToREM = toRem(Number(value));
-    setPX(value);
-    setREM(pxToREM);
+
+    if (!isNaN(value)) {
+      const pxToREM = toRem(Number(value));
+      setPX(value);
+      setREM(pxToREM);
+    }
   };
 
   const onRemChange = (e) => {
     const {
       target: { value },
     } = e;
-    const remToPX = toPX(Number(value));
-    setPX(remToPX);
-    setREM(value);
+
+    if (!isNaN(value)) {
+      const remToPX = toPX(Number(value));
+      setPX(remToPX);
+      setREM(value);
+    }
   };
 
   const handleFocus = (e) => {
@@ -56,16 +61,23 @@ export default function Home() {
     setIsREM(!isREM);
   };
 
+  useEffect(() => {
+    if (px === "") {
+      setREM("");
+    }
+    if (rem === "") {
+      setPX("");
+    }
+  }, [px, rem]);
+
   return (
-    <div className="flex flex-col justify-center pt-24 h-screen py-10 sm:m-auto sm:pt-20 p-10">
-      <h1 className="flex justify-center font-semibold text-3xl sm:text-3xl tracking-tight text-slate-200">{title}</h1>
+    <div className="flex flex-col justify-center h-screen py-12 m-auto sm:pt-20 sm:px-8 bg-light-white dark:bg-default gap-5">
+      <h1 className="flex justify-center font-displayMedium text-3xl sm:text-4xl tracking-tight text-secondary dark:text-white">
+        {title}
+      </h1>
       <div className="flex lg:flex-row md:flex-col sm:flex-col justify-between gap-8 lg:px-64 md:py-7 sm:py-7 sm:items-center">
-        {/* PX */}
         {isREM ? (
           <div className="flex flex-col items-center justify-center">
-            <label htmlFor="rem" className="font-semibold text-sky-400">
-              REM
-            </label>
             <div className="relative">
               <input
                 type="text"
@@ -73,17 +85,17 @@ export default function Home() {
                 id="rem"
                 name="rem"
                 autoComplete="off"
+                className="sm:w-full flex items-center text-center bg-light-white-second dark:bg-secondary placeholder-light-grey-third dark:placeholder-light-grey-second text-light-grey-third dark:text-light-grey-second text-3xl p-2 rounded-xl focus:outline-none"
                 onChange={onRemChange}
                 onFocus={handleFocus}
               />
-              <abbr className="font-mono unit">rem</abbr>
+              <abbr className="absolute top-0 bottom-0 right-4 inline-block align-middle text-base text-light-grey-third font-mono unit">
+                rem
+              </abbr>
             </div>
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center">
-            <label htmlFor="pixels" className="font-semibold text-sky-400">
-              Pixels
-            </label>
             <div className="relative">
               <input
                 type="text"
@@ -91,16 +103,19 @@ export default function Home() {
                 value={px}
                 name="pixels"
                 autoComplete="off"
+                className="sm:w-full flex items-center text-center bg-light-white-second dark:bg-secondary placeholder-light-grey-third dark:placeholder-light-grey-second text-light-grey-third dark:text-light-grey-second text-3xl p-2 rounded-xl focus:outline-none"
                 onChange={onPxChange}
                 onFocus={handleFocus}
               />
-              <abbr className="font-mono unit">px</abbr>
+              <abbr className="absolute top-0 bottom-0 right-4 inline-block align-middle text-base text-light-grey-third font-mono unit">
+                px
+              </abbr>
             </div>
           </div>
         )}
 
         <div
-          className="flex w-4 h-4 cursor-pointer items-center relative lg:top-3 sm:top-0 md:top-0"
+          className="flex w-4 h-4 cursor-pointer items-center relative"
           title="Swap"
           onClick={changeConverts}
         >
@@ -109,9 +124,6 @@ export default function Home() {
 
         {isREM ? (
           <div className="flex flex-col items-center justify-center">
-            <label htmlFor="pixels" className="font-semibold text-sky-400">
-              Pixels
-            </label>
             <div className="relative">
               <input
                 type="text"
@@ -120,17 +132,16 @@ export default function Home() {
                 name="pixels"
                 onChange={onPxChange}
                 autoComplete="off"
+                className="sm:w-full flex items-center text-center bg-light-white-second dark:bg-secondary placeholder-light-grey-third dark:placeholder-light-grey-second dark:text-white text-secondary text-3xl p-2 rounded-xl focus:outline-none"
                 onFocus={handleFocus}
-                className="text-white"
               />
-              <abbr className="font-mono unit">px</abbr>
+              <abbr className="absolute top-0 bottom-0 right-4 inline-block align-middle text-base text-light-grey-third font-mono unit">
+                px
+              </abbr>
             </div>
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center">
-            <label htmlFor="rem" className="font-semibold text-sky-400">
-              REM
-            </label>
             <div className="relative">
               <input
                 type="text"
@@ -139,14 +150,15 @@ export default function Home() {
                 name="rem"
                 onChange={onRemChange}
                 autoComplete="off"
-                className="text-white"
+                className="sm:w-full flex items-center text-center bg-light-white-second dark:bg-secondary placeholder-light-grey-third dark:placeholder-light-grey-second dark:text-white text-secondary text-3xl p-2 rounded-xl focus:outline-none"
                 onFocus={handleFocus}
               />
-              <abbr className="font-mono unit">rem</abbr>
+              <abbr className="absolute top-0 bottom-0 right-4 inline-block align-middle text-base text-light-grey-third font-mono unit">
+                rem
+              </abbr>
             </div>
           </div>
         )}
-        {/* REM */}
       </div>
     </div>
   );
