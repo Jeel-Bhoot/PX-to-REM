@@ -18,7 +18,7 @@ export default function Contact() {
         </p>
         <button className="w-fit mt-6 px-6 py-1.5 rounded-xl bg-blue">
           <a
-            href="mailto:abhiashobhashana@gmail.com?&to=m.anmolmehta@gmail.com"
+            href="mailto:jeelbhoot0jb@gmail.com"
             className="text-white text-lg font-sansMedium tracking-tight"
           >
             {data.contact.hello}
